@@ -10,7 +10,7 @@ if __name__ == "__main__":
     DataAcudientes={'data':[]}
     opcion=0
     while(Activate):
-        os.system("clear")
+        os.system("cls")
         print('+','-'*55,'+')
         print("|{:^20}{}{:^24}|".format(' ','Menu Pricipal',' '))
         print('+','-'*55,'+')
@@ -20,8 +20,7 @@ if __name__ == "__main__":
         opcion=int(input("Digite la Opcion: "))
         if(opcion==1):
             campers.LoadInfoCampers()
-            campers.MainMenu()
-            
+            campers.MainMenu()    
         elif(opcion==2):
             pass
         elif(opcion==3):
