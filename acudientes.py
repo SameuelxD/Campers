@@ -21,13 +21,22 @@ def MainMenu():
     opcion =int(input(":)_"))
     if (opcion == 1):
         while(Passive):
-            acudiente ={
-                "Id":int(input("Digite el Id del Acudiente: ")),
-                "Nombre":input("Digite el Nombre del Acudiente: "),
-                "Apellido":input("Digite el Apellido del Acudiente: "),
-                "Parentezco":input("Digite el Parentezco con el Camper: ")
-            }
-            infoAcudientes["data"].append(acudiente)
-            core.AddInfo("acudientes.json",acudiente)
+            id = (input("Digite el Id del Camper con Acudiente a Registrar:"))
+            for i,item in enumerate(infoCampers["data"]):
+                if id in item["Id"]:
+                    edad=int(item["Edad"])
+                    if(edad<18):
+                        acudiente ={
+                            "Id":input("Digite el Id del Acudiente: "),
+                            "Nombre":input("Digite el Nombre del Acudiente: "),
+                            "Apellido":input("Digite el Apellido del Acudiente: "),
+                            "Parentezco":input("Digite el Parentezco con el Camper: ")
+                        }
+                        infoAcudientes["data"].append(acudiente)
+                        core.AddInfo("acudientes.json",acudiente)
+                        Passive=bool(input("Digite un valor Alphanumerico para volver a Ingresar un Acudiente o Presione Enter para Salir al Menu Principal --> "))
+                    else:
+                        print("¡ERROR! El Camper no necesita Regitrar Acudiente,solo para menores de Edad ")
             Passive=bool(input("Digite un valor Alphanumerico para volver a Ingresar un Acudiente o Presione Enter para Salir al Menu Principal --> "))
+        
         

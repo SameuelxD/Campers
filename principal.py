@@ -22,6 +22,7 @@ if __name__ == "__main__":
             campers.LoadInfoCampers()
             campers.MainMenu()    
         elif(opcion==2):
-            pass
+            acudientes.LoadInfoAcudientes()
+            acudientes.MainMenu()
         elif(opcion==3):
             Activate=False
